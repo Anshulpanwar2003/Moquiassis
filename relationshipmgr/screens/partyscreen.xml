@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        require-authentication="anonymous-all">
+
+    <!-- Transition for creating a generic Party -->
+    <transition name="createParty">
+        <service-call name="create#moqui.party.party"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- Transition for creating a Person -->
+    <transition name="createPerson">
+        <service-call name="create#moqui.party.person"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- Transition for organization a Person -->
+    <transition name="createOrganization">
+        <service-call name="create#moqui.party.organization"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <!-- Transition for PartyRole a Person -->
+    <transition name="createPartyRole">
+        <service-call name="create#moqui.party.partyRole"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- Transition for contactMech a Person -->
+    <transition name="createContactMech">
+        <service-call name="create#moqui.party.contactMech"/>
+        <default-response url="."/>
+    </transition>
+
+
+
+    <!-- Transition for PartycontactMech a Person -->
+    <transition name="createPartyContactMech">
+        <service-call name="create#moqui.party.partyContactMech"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <!-- Transition for telecom a Person -->
+    <transition name="createTelecom">
+        <service-call name="create#moqui.party.telecom"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <!-- Transition for postalAddress a Person -->
+    <transition name="createPostal">
+        <service-call name="create#moqui.party.postalAddress"/>
+        <default-response url="."/>
+    </transition>
+
+
+<!--         &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;get transtition-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <!-- Transition for delete a postal address -->
+    <transition name="deletePostal">
+        <service-call name="delete#moqui.party.postalAddress"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- Transition for delete a party -->
+    <transition name="deletePostal">
+        <service-call name="delete#moqui.party.party"/>
+        <default-response url="."/>
+    </transition>
+
+
+
+
+
+    <widgets>
+        <!-- Button for Party Creation -->
+        <container-dialog id="CreatePartyDialog" button-text="Add Party">
+            <form-single name="CreateParty" transition="createParty">
+                <auto-fields-entity entity-name="party" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Add Party"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+        <!-- Button for Person Creation -->
+        <container-dialog id="CreatePersonTypeDialog" button-text="Create Person">
+            <form-single name="CreatePerson" transition="createPerson">
+                <auto-fields-entity entity-name="person" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Add Person"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+        <!-- Button for Organization Creation -->
+        <container-dialog id="CreateOrganizationTypeDialog" button-text="Create organization">
+            <form-single name="CreatePerson" transition="createOrganization">
+                <auto-fields-entity entity-name="organization" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Add oragnization"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+        <!-- Button for partyRole Creation -->
+        <container-dialog id="CreatePartyRoleTypeDialog" button-text="Create Party Role">
+            <form-single name="CreatePartyRole" transition="createPartyRole">
+                <auto-fields-entity entity-name="partyRole" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Add partyRole"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+        <!-- Button for ContactMech Creation -->
+        <container-dialog id="CreateContactMechTypeDialog" button-text="Create ContactMech">
+            <form-single name="CreateContactMech" transition="createContactMech">
+                <auto-fields-entity entity-name="contactMech" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Add contactMech"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+        <!-- Button for PartyContactMech Creation -->
+        <container-dialog id="CreatePartyContactMechTypeDialog" button-text="Create PartyContactMech">
+            <form-single name="CreatePartyContactMech" transition="createPartyContactMech">
+                <auto-fields-entity entity-name="partyContactMech" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Add partyContactMech"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+        <!-- Button for Telecom Creation -->
+        <container-dialog id="CreateTelecomTypeDialog" button-text="Create Telecom">
+            <form-single name="CreateTelecom" transition="createTelecom">
+                <auto-fields-entity entity-name="telecom" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Add telecom"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+        <!-- Button for postal Creation -->
+        <container-dialog id="CreatePostalAddressTypeDialog" button-text="Create PostalAddress">
+            <form-single name="CreatePostal" transition="createPostal">
+                <auto-fields-entity entity-name="postalAddress" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Add postalAddress"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+        <!--    -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;get entity -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+<!--        delete-->
+
+<!--        delete postal-->
+
+        <container-dialog id="DeletePostalAddressTypeDialog" button-text="delete PostalAddress">
+            <form-single name="DeletePostal" transition="deletePostal">
+
+                <field name="contactMechId">
+                    <default-field title="contactMechId"><text-line/></default-field>
+                </field>
+
+                <field name="submitButton">
+                    <default-field title="delete postalAddress"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+
+<!--        -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; party delete -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+<!--      delete party-->
+        <container-dialog id="DeletePartyTypeDialog" button-text="delete Party">
+            <form-single name="DeleteParty" transition="deleteParty">
+
+                <field name="partyId">
+                    <default-field title="partyId"><text-line/></default-field>
+                </field>
+
+                <field name="submitButton">
+                    <default-field title="delete party"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+
+
+
+
+    </widgets>
+</screen>
+
