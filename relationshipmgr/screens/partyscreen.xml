@@ -330,9 +330,9 @@
 
         <!--      delete telecom-->
         <container-dialog id="DeleteTelecomTypeDialog" button-text="delete telecom">
-            <form-single name="DeleteTelecom" transition="deleteTelecom">
+            <form-single name="DeleteTelecom" transition="deleteTelecom" >
 
-                <field name="partyContactMechId">
+                <field name="partyContactMechId" >
                     <default-field title="partyContactMechId"><text-line/></default-field>
                 </field>
 
@@ -341,25 +341,6 @@
                 </field>
             </form-single>
         </container-dialog>
-
-
-
-        <!--      delete postaladdress-->
-        <container-dialog id="DeletePostalAddressTypeDialog" button-text="delete postalAddress">
-            <form-single name="DeletePostalAddress" transition="deletePostalAddress">
-
-                <field name="partyContactMechId">
-                    <default-field title="partyContactMechId"><text-line/></default-field>
-                </field>
-
-                <field name="submitButton">
-                    <default-field title="delete postalAddress"><submit/></default-field>
-                </field>
-            </form-single>
-        </container-dialog>
-
-
-
 
 
 
