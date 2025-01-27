@@ -66,8 +66,56 @@
     </transition>
 
     <!-- Transition for delete a party -->
-    <transition name="deletePostal">
+    <transition name="deleteParty">
         <service-call name="delete#moqui.party.party"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <!-- Transition for delete a person -->
+    <transition name="deletePerson">
+        <service-call name="delete#moqui.party.person"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- Transition for delete a organization -->
+    <transition name="deleteOrganisation">
+        <service-call name="delete#moqui.party.organization"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <!-- Transition for delete a partyRole -->
+    <transition name="deletePartyRole">
+        <service-call name="delete#moqui.party.partyRole"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <!-- Transition for delete a contactMech -->
+    <transition name="deleteContactMech">
+        <service-call name="delete#moqui.party.contactMech"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <!-- Transition for delete a partycontactMech -->
+    <transition name="deletePartyContactMech">
+        <service-call name="delete#moqui.party.partyContactMech"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <!-- Transition for delete a telecom -->
+    <transition name="deleteTelecom">
+        <service-call name="delete#moqui.party.telecom"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <!-- Transition for delete a partycontactMech -->
+    <transition name="deletePostalAddress">
+        <service-call name="delete#moqui.party.postalAddress"/>
         <default-response url="."/>
     </transition>
 
@@ -75,7 +123,14 @@
 
 
 
+
+
+
+
     <widgets>
+
+
+        <label type="h1" text="Create Screen"/>
         <!-- Button for Party Creation -->
         <container-dialog id="CreatePartyDialog" button-text="Add Party">
             <form-single name="CreateParty" transition="createParty">
@@ -161,6 +216,7 @@
         </container-dialog>
 
 
+        <label type="h1" text="Delete Screen"/>
         <!--    -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;get entity -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 
 <!--        delete-->
@@ -182,7 +238,6 @@
 
 
 
-<!--        -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; party delete -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 
 <!--      delete party-->
         <container-dialog id="DeletePartyTypeDialog" button-text="delete Party">
@@ -197,6 +252,114 @@
                 </field>
             </form-single>
         </container-dialog>
+
+
+        <!--      delete person-->
+        <container-dialog id="DeletePersonTypeDialog" button-text="delete Person">
+            <form-single name="DeletePerson" transition="deletePerson">
+
+                <field name="partyId">
+                    <default-field title="partyId"><text-line/></default-field>
+                </field>
+
+                <field name="submitButton">
+                    <default-field title="delete person"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+        <!--      delete organization-->
+        <container-dialog id="DeleteOrganizationTypeDialog" button-text="delete organization">
+            <form-single name="DeleteOrganization" transition="deleteOrganisation">
+
+                <field name="partyId">
+                    <default-field title="partyId"><text-line/></default-field>
+                </field>
+
+                <field name="submitButton">
+                    <default-field title="delete organisation"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+        <!--      delete partyRole-->
+        <container-dialog id="DeletePartyRoleTypeDialog" button-text="delete partyRole">
+            <form-single name="DeletePartyRole" transition="deletePartyRole">
+
+                <field name="partyId">
+                    <default-field title="partyId"><text-line/></default-field>
+                </field>
+
+                <field name="submitButton">
+                    <default-field title="delete partyRole"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+        <!--      delete contactMech-->
+        <container-dialog id="DeleteContactMechTypeDialog" button-text="delete contactMech">
+            <form-single name="DeleteContactMech" transition="deleteContactMech">
+
+                <field name="contactMechId">
+                    <default-field title="contactMechId"><text-line/></default-field>
+                </field>
+
+                <field name="submitButton">
+                    <default-field title="delete contactMech"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+        <!--      delete partyContactMech-->
+        <container-dialog id="DeletePartyContactMechTypeDialog" button-text="delete partyContactMech">
+            <form-single name="DeletePartyContactMech" transition="deletePartyContactMech">
+
+                <field name="partyContactMechId">
+                    <default-field title="partyContactMechId"><text-line/></default-field>
+                </field>
+
+                <field name="submitButton">
+                    <default-field title="delete PartyContactMech"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+        <!--      delete telecom-->
+        <container-dialog id="DeleteTelecomTypeDialog" button-text="delete telecom">
+            <form-single name="DeleteTelecom" transition="deleteTelecom">
+
+                <field name="partyContactMechId">
+                    <default-field title="partyContactMechId"><text-line/></default-field>
+                </field>
+
+                <field name="submitButton">
+                    <default-field title="delete telecom"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+
+        <!--      delete postaladdress-->
+        <container-dialog id="DeletePostalAddressTypeDialog" button-text="delete postalAddress">
+            <form-single name="DeletePostalAddress" transition="deletePostalAddress">
+
+                <field name="partyContactMechId">
+                    <default-field title="partyContactMechId"><text-line/></default-field>
+                </field>
+
+                <field name="submitButton">
+                    <default-field title="delete postalAddress"><submit/></default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+
+
 
 
 
